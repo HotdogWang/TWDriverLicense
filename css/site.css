@@ -1,0 +1,68 @@
+/* 2.0 改版新增的樣式；不經 gulp，直接由 index.html 載入 */
+
+.phone-shot {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  border: 8px solid #1b2230;
+  border-radius: 36px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+section.screens {
+  padding: 100px 0;
+  background-color: #f7f7f9;
+}
+
+section.screens .section-heading {
+  margin-bottom: 60px;
+}
+
+section.screens figure {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+section.screens figcaption {
+  margin-top: 16px;
+  color: #6c757d;
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+footer a:hover {
+  color: #fdcc52;
+}
+
+body.legal {
+  padding-top: 90px;
+}
+
+body.legal #mainNav {
+  background-color: #fff;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.1);
+}
+
+body.legal #mainNav .navbar-brand,
+body.legal #mainNav .nav-link {
+  color: #222;
+}
+
+body.legal main {
+  max-width: 760px;
+  padding-bottom: 80px;
+  line-height: 1.8;
+}
+
+body.legal main h1 {
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+body.legal main h2 {
+  margin-top: 40px;
+  font-size: 1.35rem;
+}
