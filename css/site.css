@@ -124,5 +124,10 @@ section.features .feature-item i {
 
 section.contact ul.list-social li.social-google-plus a,
 section.contact ul.list-social li.social-google-plus a:hover {
+  color: #fff;
   background-color: #1e5c3f;
+}
+
+section.contact ul.list-social li.social-google-plus a:hover {
+  background-color: #174a33;
 }
