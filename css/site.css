@@ -5,14 +5,14 @@
   width: 100%;
   max-width: 260px;
   margin: 0 auto;
-  border: 8px solid #1b2230;
-  border-radius: 36px;
+  border: 6px solid #1c2620;
+  border-radius: 34px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
 section.screens {
   padding: 100px 0;
-  background-color: #f7f7f9;
+  background-color: #f7f6f1;
 }
 
 section.screens .section-heading {
@@ -34,7 +34,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #fdcc52;
+  color: #f2c94c;
 }
 
 body.legal {
@@ -65,4 +65,64 @@ body.legal main h1 {
 body.legal main h2 {
   margin-top: 40px;
   font-size: 1.35rem;
+}
+
+/* 配色跟 App 一致：紙白底、深綠主色、黃色點綴。覆寫模板的紫紅漸層 */
+header.masthead {
+  background: #1e5c3f;
+}
+
+header.masthead .phone-shot {
+  border-color: #14301f;
+}
+
+/* bootstrap 的 .bg-primary 是 !important 藍底，模板原本靠漸層蓋住 */
+.bg-primary {
+  background: #e3efe8 !important;
+}
+
+section.download,
+section.contact {
+  color: #1c2620;
+}
+
+section.features .feature-item i {
+  background: none;
+  color: #1e5c3f;
+  -webkit-text-fill-color: currentColor;
+}
+
+.text-primary {
+  color: #1e5c3f !important;
+}
+
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active {
+  border-color: #f2c94c;
+  background-color: #f2c94c;
+  color: #1c2620;
+}
+
+#mainNav .navbar-brand,
+#mainNav .navbar-brand:hover,
+#mainNav .navbar-nav > li > a.active,
+#mainNav .navbar-nav > li > a:hover,
+#mainNav .navbar-nav > li > a:focus:hover {
+  color: #1e5c3f !important;
+}
+
+/* 桌機版導覽列在深綠頁首上是透明的，捲動後（navbar-shrink）才變白底 */
+@media (min-width: 992px) {
+  #mainNav:not(.navbar-shrink) .navbar-brand,
+  #mainNav:not(.navbar-shrink) .navbar-nav > li > a.active,
+  #mainNav:not(.navbar-shrink) .navbar-nav > li > a:hover,
+  #mainNav:not(.navbar-shrink) .navbar-nav > li > a:focus:hover {
+    color: #f2c94c !important;
+  }
+}
+
+section.contact ul.list-social li.social-google-plus a,
+section.contact ul.list-social li.social-google-plus a:hover {
+  background-color: #1e5c3f;
 }
