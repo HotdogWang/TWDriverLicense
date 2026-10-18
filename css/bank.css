@@ -1,0 +1,29 @@
+/* 題庫靜態頁；由 tools/web/generate_bank_pages.py 複製到 web/css/bank.css，不手改 */
+body.bank main { max-width: 760px; }
+body.bank .breadcrumb { background: none; padding: 0; margin-bottom: 16px; font-size: 0.9rem; }
+body.bank main h1 { font-size: 1.7rem; }
+/* 模板的 a 是黃色 #fdcc52，白底對比只有 1.5:1 */
+body.bank main a:not(.btn) { color: #1e5c3f; text-decoration: underline; }
+body.bank .card-title { margin-top: 0; }
+body.bank .breadcrumb-item.active, body.bank .breadcrumb-item + .breadcrumb-item::before { color: #5a6268; }
+body.bank .intro { font-size: 1.05rem; }
+body.bank .meta { color: #6c757d; font-size: 0.9rem; }
+.download-card { margin: 28px 0; padding: 18px 20px; border: 1px solid #1e5c3f; border-radius: 12px; background: #f3f8f5; }
+.download-card .btn { margin-right: 12px; }
+.download-card .btn-primary { background: #1e5c3f; border-color: #1e5c3f; color: #fff; }
+.download-card .btn-primary:hover, .download-card .btn-primary:focus { background: #174a33; border-color: #174a33; }
+.download-card .text-muted { color: #5a6268 !important; }
+ol.questions { list-style: none; padding: 0; margin: 0; }
+ol.questions > li { padding: 20px 0; border-top: 1px solid #e5e5e5; }
+ol.questions h2.qnum { margin: 0 0 6px; font-size: 0.9rem; color: #1e5c3f; font-weight: 700; }
+ol.questions .stem { font-size: 1.05rem; margin-bottom: 10px; }
+ol.questions img { display: block; max-width: 100%; height: auto; margin: 0 0 12px; }
+ol.options { padding-left: 1.6em; margin: 0; }
+ol.options li { margin: 4px 0; }
+ol.options li.correct { font-weight: 700; color: #1e5c3f; }
+ol.options .badge { background: #1e5c3f; color: #fff; font-weight: 400; margin-left: 6px; }
+.video { font-size: 0.95rem; }
+nav.pager { display: flex; justify-content: space-between; gap: 12px; margin: 24px 0 40px; }
+.vehicle-cards .card { margin-bottom: 16px; }
+ul.topics { padding-left: 1.2em; }
+ul.topics li { margin: 6px 0; }

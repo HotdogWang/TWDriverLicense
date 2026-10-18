@@ -29,8 +29,11 @@ section.screens figcaption {
   color: #6c757d;
 }
 
-footer a {
-  color: rgba(255, 255, 255, 0.6);
+/* 模板的 #646464 配 #222 底對比只有 2.7:1 */
+footer p,
+footer a,
+footer ul li a {
+  color: #b3b3b3;
 }
 
 footer a:hover {
@@ -131,3 +134,6 @@ section.contact ul.list-social li.social-google-plus a:hover {
 section.contact ul.list-social li.social-google-plus a:hover {
   background-color: #174a33;
 }
+
+section.bank-entry { padding: 80px 0; background: #fff; }
+section.bank-entry .btn { margin: 8px; }
