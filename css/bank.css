@@ -27,3 +27,29 @@ nav.pager { display: flex; justify-content: space-between; gap: 12px; margin: 24
 .vehicle-cards .card { margin-bottom: 16px; }
 ul.topics { padding-left: 1.2em; }
 ul.topics li { margin: 6px 0; }
+body.bank .lang-switch .nav-link { font-size: 0.85rem; padding: 0.5rem 0.4rem; }
+body.bank .lang-switch [aria-current] { font-weight: 700; text-decoration: underline; }
+ol.questions .zh-link { font-size: 0.8rem; margin-left: 8px; font-weight: 400; }
+body.bank .notice { color: #5a6268; font-size: 0.9rem; }
+.download-card .badge-link { margin-right: 12px; }
+.guide ul { padding-left: 1.2em; }
+.guide h3 { font-size: 1.2rem; margin-top: 28px; }
+.guide .sources { font-size: 0.9rem; color: #5a6268; }
+.guide .sources a { margin-right: 10px; }
+header.masthead .phone-shot { max-width: 260px; }
+section.bank-entry .notice { margin-top: 12px; }
+/* landing page (body.landing): template links are yellow on white; width/height attrs need height:auto */
+body.landing .guide a { color: #1e5c3f; text-decoration: underline; }
+body.landing .notice { color: #5a6268; font-size: 0.9rem; }
+body.landing .phone-shot { height: auto; }
+body.landing .hero-store { margin-top: 24px; }
+body.landing .hero-store .badge-link { margin-right: 12px; }
+body.landing .lang-switch .nav-link { font-size: 0.85rem; padding: 0.5rem 0.4rem; }
+body.landing .lang-switch [aria-current] { font-weight: 700; text-decoration: underline; }
+/* five nav items plus six languages do not fit one desktop row */
+body.landing #mainNav .navbar-nav { flex-wrap: wrap; justify-content: flex-end; }
+/* new-age fixes the download badge at 60px high; let the width follow instead of the width attribute */
+body.landing section.download .badges .badge-link img { width: auto; }
+/* new-age sizes section h2 at 50–70px with a 100px gap, too big for long translated headings */
+body.landing h2.section-heading, body.landing .section-heading h2 { font-size: 2rem; margin-top: 0; margin-bottom: 1rem; }
+body.landing section.features .section-heading, body.landing section.screens .section-heading { margin-bottom: 40px; }
