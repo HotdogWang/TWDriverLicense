@@ -1,13 +1,8 @@
 /* 題庫靜態頁；由 tools/web/generate_bank_pages.py 複製到 web/css/bank.css，不手改 */
 body.bank main { max-width: 760px; }
-body.bank .breadcrumb { background: none; padding: 0; margin-bottom: 16px; font-size: 0.9rem; }
-body.bank main h1 { font-size: 1.7rem; }
 /* 模板的 a 是黃色 #fdcc52，白底對比只有 1.5:1 */
 body.bank main a:not(.btn) { color: #1e5c3f; text-decoration: underline; }
 body.bank .card-title { margin-top: 0; }
-body.bank .breadcrumb-item.active, body.bank .breadcrumb-item + .breadcrumb-item::before { color: #5a6268; }
-body.bank .intro { font-size: 1.05rem; }
-body.bank .meta { color: #6c757d; font-size: 0.9rem; }
 .download-card { margin: 28px 0; padding: 18px 20px; border: 1px solid #1e5c3f; border-radius: 12px; background: #f3f8f5; }
 .download-card .btn { margin-right: 12px; }
 .download-card .btn-primary { background: #1e5c3f; border-color: #1e5c3f; color: #fff; }
@@ -24,11 +19,15 @@ ol.options li.correct { font-weight: 700; color: #1e5c3f; }
 ol.options .badge { background: #1e5c3f; color: #fff; font-weight: 400; margin-left: 6px; }
 .video { font-size: 0.95rem; }
 nav.pager { display: flex; justify-content: space-between; gap: 12px; margin: 24px 0 40px; }
-.vehicle-cards .card { margin-bottom: 16px; }
+.vehicle-cards { display: grid; gap: 16px; }
+@media (min-width: 640px) { .vehicle-cards { grid-template-columns: 1fr 1fr; } }
+.vehicle-cards .card { border: 1px solid #d6e5dc; border-radius: 12px; background: #f7faf8; box-shadow: none; margin: 0; transition: border-color .2s, background .2s; }
+.vehicle-cards .card:hover { border-color: #1e5c3f; background: #fff; }
+.vehicle-cards .card-title { color: #1e5c3f; font-size: 1.3rem; }
+/* long translated button labels overflow a phone-width card otherwise */
+.vehicle-cards .btn { white-space: normal; }
 ul.topics { padding-left: 1.2em; }
 ul.topics li { margin: 6px 0; }
-body.bank .lang-switch .nav-link { font-size: 0.85rem; padding: 0.5rem 0.4rem; }
-body.bank .lang-switch [aria-current] { font-weight: 700; text-decoration: underline; }
 ol.questions .zh-link { font-size: 0.8rem; margin-left: 8px; font-weight: 400; }
 body.bank .notice { color: #5a6268; font-size: 0.9rem; }
 .download-card .badge-link { margin-right: 12px; }
@@ -44,12 +43,56 @@ body.landing .notice { color: #5a6268; font-size: 0.9rem; }
 body.landing .phone-shot { height: auto; }
 body.landing .hero-store { margin-top: 24px; }
 body.landing .hero-store .badge-link { margin-right: 12px; }
-body.landing .lang-switch .nav-link { font-size: 0.85rem; padding: 0.5rem 0.4rem; }
-body.landing .lang-switch [aria-current] { font-weight: 700; text-decoration: underline; }
-/* five nav items plus six languages do not fit one desktop row */
+/* translated nav labels can overflow one desktop row */
 body.landing #mainNav .navbar-nav { flex-wrap: wrap; justify-content: flex-end; }
 /* new-age fixes the download badge at 60px high; let the width follow instead of the width attribute */
 body.landing section.download .badges .badge-link img { width: auto; }
 /* new-age sizes section h2 at 50–70px with a 100px gap, too big for long translated headings */
 body.landing h2.section-heading, body.landing .section-heading h2 { font-size: 2rem; margin-top: 0; margin-bottom: 1rem; }
 body.landing section.features .section-heading, body.landing section.screens .section-heading { margin-bottom: 40px; }
+/* language dropdown (all pages; the Chinese home loads this file for it) */
+#mainNav .lang-menu .dropdown-toggle { display: inline-flex; align-items: center; gap: 6px; }
+#mainNav .lang-menu svg { width: 15px; height: 15px; }
+#mainNav .lang-menu .dropdown-menu { min-width: 190px; border: 0; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,.15); padding: 6px; }
+#mainNav .lang-menu .dropdown-item { border-radius: 6px; padding: 8px 12px; font-size: .95rem; color: #1c2620; letter-spacing: 0; text-transform: none; }
+#mainNav .lang-menu .dropdown-item:hover { background: #e3efe8; }
+#mainNav .lang-menu .dropdown-item[aria-current] { font-weight: 700; color: #1e5c3f; }
+#mainNav .lang-menu .dropdown-item[aria-current]::after { content: " \2713"; }
+/* bank pages: white navbar over a green title band; the band's top padding clears the fixed navbar */
+body.bank { padding-top: 0; }
+body.bank #mainNav { background: #fff; border-bottom: 1px solid rgba(34,34,34,.08); }
+body.bank #mainNav .navbar-brand { color: #1e5c3f !important; }
+body.bank #mainNav .nav-link { color: #1c2620; }
+body.bank #mainNav .nav-link:hover { color: #1e5c3f; }
+.bank-hero { background: #1e5c3f; color: #fff; padding: 104px 0 40px; }
+.bank-hero .container { display: flex; flex-direction: column; max-width: 760px; }
+.bank-hero .breadcrumb { background: none; padding: 0; margin-bottom: 18px; font-size: .9rem; }
+.bank-hero .breadcrumb a, .bank-hero .breadcrumb-item.active, .bank-hero .breadcrumb-item + .breadcrumb-item::before { color: rgba(255,255,255,.75) !important; text-decoration: none !important; }
+.bank-hero .breadcrumb a:hover { color: #f2c94c !important; }
+.bank-hero h1 { color: #fff; font-size: 2.1rem; line-height: 1.3; margin-bottom: 14px; }
+.bank-hero .intro { color: rgba(255,255,255,.92); font-size: 1.05rem; line-height: 1.8; }
+.bank-hero .meta { color: rgba(255,255,255,.7) !important; font-size: .9rem; }
+.bank-hero .meta a { color: #f2c94c !important; }
+.bank-hero .download-card { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22); color: #fff; margin: 22px 0 0; }
+.bank-hero .download-card .btn-primary { background: #f2c94c; border-color: #f2c94c; color: #1c2620; border-radius: 300px; }
+.bank-hero .download-card .btn-primary:hover, .bank-hero .download-card .btn-primary:focus { background: #e6b93a; border-color: #e6b93a; color: #1c2620; }
+.bank-hero .download-card .text-muted { color: rgba(255,255,255,.75) !important; }
+/* phones: the band ends after the download card; intro and meta follow on white (same DOM, reordered) */
+/* the 1px vertical overlap hides green hairlines at subpixel edges between the white blocks */
+@media (max-width: 767.98px) {
+  .bank-hero { padding-bottom: 0; }
+  .bank-hero h1 { margin-bottom: 24px; }
+  .bank-hero .download-card { order: 1; margin: 0 0 28px; }
+  .bank-hero .intro, .bank-hero .meta { order: 2; margin: 0; background: #fff; box-shadow: 0 0 0 100vmax #fff; clip-path: inset(-1px -100vmax); }
+  .bank-hero .intro { color: #1c2620; padding-bottom: 12px; }
+  .bank-hero .intro, .bank-hero h1 + .meta { padding-top: 24px; }
+  .bank-hero .meta { color: #6c757d !important; }
+  .bank-hero .meta a { color: #1e5c3f !important; text-decoration: underline; }
+}
+body.bank main { padding-top: 36px; }
+body.bank .download-card .btn-primary { border-radius: 300px; }
+body.bank .btn-outline-primary { color: #1e5c3f; border-color: #1e5c3f; border-radius: 300px; padding: 8px 22px; }
+body.bank .btn-outline-primary:hover { background: #1e5c3f; color: #fff; }
+body.bank main a.btn-outline-primary { text-decoration: none !important; color: #1e5c3f !important; }
+body.bank main a.btn-outline-primary:hover { color: #fff !important; }
+body.bank main h2:not(.qnum):not(.card-title) { color: #1e5c3f; margin-top: 32px; }
